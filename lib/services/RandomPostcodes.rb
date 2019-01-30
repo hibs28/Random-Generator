@@ -8,7 +8,7 @@ class RandomPostcodes
   def random_array(number_of_postcodes)
     # return array with specified number of postcodes inside 
     array = []
-    number_of_postcodes.times{array << generate_random_postcode}
+    number_of_postcodes.times{ array << generate_random_postcode }
     array
   end
 
@@ -17,6 +17,3 @@ class RandomPostcodes
     random_postcode = json_result['result']['postcode']
   end
 end
-
-test = RandomPostcodes.new
-p test.random_array(rand(2..10))
