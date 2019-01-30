@@ -1,4 +1,4 @@
-require_relative './services/RandomPostcodes'
+require_relative 'lib/services/RandomPostcodes'
 
 class Generator
   def postcodes

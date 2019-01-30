@@ -1,6 +1,13 @@
 # Random Generator Template
+## Table of Contents
+1. [Description](#Description)
+2. [How to Download](#How-To-Download)
+3. [Run file](#to-run-the-file)
+4. [To use in your own Project](#to-use-within-your-project)
+
+
 ## Description
-This project is to retrieve a random number of data to test from an API. This template can be used with other APIs if they have a random generator. 
+This project is to retrieve a random number of dto test from an API. This template can be used with other APIs if they have a random generator. 
 
 ### Languages used
 * Ruby
@@ -10,18 +17,21 @@ This project is to retrieve a random number of data to test from an API. This te
 * HTTParty
 * RSpec
 
+
 ## How to download
-1. In your terminal create a empty folder/ directory of where you want this template.
-2. Once you are in the folder, type in:
-` git clone https://github.com/hibs28/Random-Generator-Template.git` 
-3. You can then extract the files you want
- 
-If you want to use it for your API:
+1. In your terminal create a empty folder/ directory of where you want this repository.
+2. Once you are in the folder, type in terminal:
+` git clone https://github.com/hibs28/Random-Generator.git` 
+3. Go into Random-Generator folder.
 
-1. Replace the `base_uri` with the API you want to use and change the path in `def generate_random_postcode`  
-2. If the path is a **POST** request change `get` into `post` and change the single quotes for the path `'<post_path>'` to double quotes `"<post_path>"`
+## To run the file
+1. If you have the gems above pre-installed then type in terminal 
+  `rspec` to run the project. 
+2. You can see what tests there are and check if they have <span style="color:green">passed</span> or <span style="color:red">failed</span>.
 
-### How to install gems
+
+## To use within your project
+If you want to use the generator in your own project make sure you have a Gemfile already. If not follow the next steps.
 
 #### If you already have a gemfile, type this into your file:
 
@@ -43,3 +53,17 @@ gem 'json'
 gem 'rspec' 
 ```
 Then run `bundle`. This will install all of the gems in ruby. 
+
+To initiate RSpec type in terminal `rspec --init` which will create the spec folder. In the spec folder there is a spec_helper type in:
+
+```
+require 'rspec'
+#along with the necessary require_relative
+RSpec.configure do |config|
+  config.formatter = :documentation
+end 
+```
+
+In the spec folder you can create a test_spec and in the top you will need `require 'spec_helper'` which will use those gems
+
+You will then you need to download an instance of the object `Generator.new.postcodes.random_array(rand(2..10))`
